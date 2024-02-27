@@ -2,7 +2,6 @@ let navButton = document.querySelector(".burger-menu");
 let menuActive = false;
 
 function showMenu() {
-    console.log("hej")
     let menu = document.querySelector(".nav-container");
     menu.classList.toggle("active");
 }

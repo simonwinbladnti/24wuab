@@ -9,10 +9,9 @@ body {
 .landing-container {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 50% 30% 10%;
+    grid-template-rows: 5rem 25rem 25rem 15rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    max-height: 150vh;
     min-height: 150vh;
 }
 
@@ -90,12 +89,28 @@ body {
 .landing-container main {
     background-color: rgb(47, 47, 47);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     grid-area: 2 / 1 / 3 / 2;
     color: rgb(235, 235, 235);
-    padding: 20px;
+    linear-gradient(transparent, white);
 }
 
+.landing-container .main-image {
+    padding: 20px;
+    width: 50%;
+}
+
+.landing-container .main-text {
+    padding: 20px;
+    width: 50%;
+}
+
+.landing-container main img {
+    object-fit: cover;
+    width: 100%;
+    filter: drop-shadow(0 2rem 2rem rgba(0, 0, 0, 0.303));
+}
 
 .landing-container main h1 {
     font-weight: 1000;
@@ -106,13 +121,72 @@ body {
 
 .landing-container main p {
     color: rgb(185, 184, 184);
-    width: 55%;
     font-size: 1.3rem;
 }
 
+.landing-container button {
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.landing-container .main-btn {
+    background-color: #48cae4ae;
+}
+
+.landing-container .main-btn:hover {
+    transition: 1000ms;
+    background-color: #48cae4;
+}
+
+
 .landing-container section {
     grid-area: 3 / 1 / 4 / 2;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    justify-content: center;
+}
+
+.landing-container section h1 {
+    font-weight: 1000;
+    color: white;
+}
+
+.landing-container section p {
+    color: rgb(185, 184, 184);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.landing-container .section-image {
+    width: 50%;
+}
+
+.landing-container .section-text {
+    padding: 20px;
+    width: 50%;
+}
+
+
+.landing-container .section-btn {
+    background-color: #5848e4ae;
+}
+
+.landing-container .section-btn:hover {
+    transition: 1000ms;
+    background-color: #6248e46b;
 }
 
 .landing-container footer {
