@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="landing-container">
+  <div class="booking-container">
     <header>
       <div class="left-section">
         <h1>Mölndals Trafikskola</h1>
@@ -23,28 +23,27 @@
         <li><a href="">Kontakt/Om Oss</a></li>
       </ul>
     </nav>
-    <main>
-      <div class="main-text">
-        <h1>Välkommen till en smart och smidig trafikskola!</h1>
-        <p>Vi utbildar elever för personbil, behörighet B, B96 och BE vi kör med både manuell och automatväxel utifrån era önskemål. Vi håller även i Introkurs/Handledarutbildning samt Riskettan.</p>
-        <button class="main-btn">Mer info!</button>
-      </div>
-      <div class="main-image">
-        <img src="img/volvoimg.png" alt="">
-      </div>
+    <main class="main-booking">
+      <div class="main-container">
+        <h2>Bokningsformulär!</h2>
+        <form action="#" method="post" class="booking-form">
+          <input type="text" name="name" placeholder="Namn" required>
+          <input type="email" name="email" placeholder="Telefon" required>
+          <input type="tel" name="phone" placeholder="Telefon" required>
+          <select name="package" required>
+            <option value="" disabled selected>Select Package</option>
+            <option value="Package 1">Package 1</option>
+            <option value="Package 2">Package 2</option>
+            <option value="Package 3">Package 3</option>
+          </select>  
+          <textarea name="message" placeholder="Övrigt"></textarea>
+          <button type="submit">Skicka in!</button>
+        </form>
+      </div>  
     </main>
     <section>
-      <div class="section-image">
-        <img src="img/driving.jpg" alt="">
-      </div>
-      <div class="section-text">
-        <h1>Varför välja oss?</h1>
-        <p>Erfarna instruktörer, moderna bilar och flexibla körlektioner –<br><br>Hos oss får du allt du behöver för en effektiv och positiv körupplevelse. Vi ser till att du får den individuella vägledning du behöver för att bli en säker och kompetent förare.
-
-          Kontakta oss idag för att boka en gratis konsultation! Vi ser fram emot att hjälpa dig på vägen till ditt körkort!</p>
-        <button class="section-btn">Boka idag!</button>
-      </div>
     </section>
+
     <footer>
       <div class="footer-content">
         <h2>Mölndals Trafikskola</h2>
