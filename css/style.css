@@ -349,3 +349,43 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 .booking-form button:hover {
     background-color: #0056b3;
 }
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.my-booking {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 30%;
+}
+
+.booking-card {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.booking-card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}

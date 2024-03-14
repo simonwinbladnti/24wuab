@@ -8,29 +8,26 @@ function showMenu() {
 
 navButton.addEventListener('click', showMenu);
 
-let slideIndex = 1;
-showSlides(slideIndex);
+const submitButton = document.getElementById('submitButton');
+const form = document.querySelector('.booking-form');
+const bookingInfoElement = document.getElementById('bookingInfo');
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+  const loadingOverlay = document.createElement('div');
+  loadingOverlay.classList.add('loading-overlay');
+  loadingOverlay.textContent = 'Laddar...';
+  document.body.appendChild(loadingOverlay);
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+  setTimeout(function() {
+    document.body.removeChild(loadingOverlay);
+
+    const selectedDate = new Date(); 
+    const selectedPackage = document.querySelector('.booking-form select[name="package"]').value;
+
+    bookingInfoElement.textContent = `${selectedDate.toLocaleDateString()} ${selectedDate.toLocaleTimeString()} - ${selectedPackage}`;
+
+  }, 2000); 
+
+});
