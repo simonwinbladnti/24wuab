@@ -23,10 +23,23 @@ submitButton.addEventListener('click', function(event) {
   setTimeout(function() {
     document.body.removeChild(loadingOverlay);
 
-    const selectedDate = new Date(); 
+    const selectedDate = document.querySelector('.booking-form input[name="datebook"]').value;
+    const selectTime = document.querySelector('.booking-form input[name="timebook"]').value;
     const selectedPackage = document.querySelector('.booking-form select[name="package"]').value;
+    const bookingCards = document.querySelector('.booking-card');
 
-    bookingInfoElement.textContent = `${selectedDate.toLocaleDateString()} ${selectedDate.toLocaleTimeString()} - ${selectedPackage}`;
+    let pacakgeType
+    if (selectedPackage == "lektion") {
+       pacakgeType = "Lektion"
+    } else if (selectedPackage == "handledar") {
+       pacakgeType = "Handledar kurs"
+
+    } else if (selectedPackage == "risk") {
+       pacakgeType = "Risk 1 & Risk 2"
+    }
+    bookingCards.style.display = "flex";
+
+    bookingInfoElement.textContent = `${selectedDate} - ${selectTime} - ${pacakgeType}`;
 
   }, 2000); 
 

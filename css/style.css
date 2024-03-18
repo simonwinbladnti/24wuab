@@ -12,7 +12,6 @@ body {
     grid-template-rows: 5rem 25rem 25rem 10rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    min-height: 150vh;
 }
 
 header {
@@ -95,8 +94,10 @@ nav a {
 }
 
 .landing-container .main-image {
-    padding: 20px;
     width: 50%;
+    height: auto;
+    display: block;
+    overflow: hidden;
 }
 
 .landing-container .main-text {
@@ -122,13 +123,14 @@ nav a {
     font-size: 1.3rem;
 }
 
-.landing-container button, .prices-container button {
+.landing-container .section-btn, .prices-container .section-btn {
     font-family: Roboto, sans-serif;
     font-weight: 0;
     font-size: 18px;
     color: #fff;
     padding: 10px 30px;
     border: none;
+    width: 90px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     border-radius: 50px;
     transition : 1000ms;
@@ -171,6 +173,13 @@ nav a {
 
 .landing-container .section-image, .prices-container .section-image {
     width: 50%;
+    object-fit: cover;
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .landing-container .section-text, .prices-container .section-text {
@@ -217,7 +226,6 @@ footer p {
     grid-template-rows: 5rem 25rem 25rem 10rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    min-height: 150vh;
 }
 
 .prices-container main {
@@ -273,7 +281,6 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     grid-template-rows: 5rem 50rem 10rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    min-height: 150vh;
 }
 
 .booking-container main {
@@ -288,7 +295,6 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .main-booking {
     background-color: #f9f9f9;
-    padding: 50px 0;
     text-align: center;
 }
 
@@ -374,7 +380,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .booking-card {
     background-color: rgb(240, 240, 240);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -382,10 +388,55 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 80%;
+    height: 40%;
     padding: 10px;
     border-radius: 20px;
 }
 
 .booking-card:hover {
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+@media only screen and (max-width: 600px) {
+    .landing-container p, .prices-container p, .landing-container main p {
+        font-size: 0.8rem;
+    }
+
+    .landing-container main h1 {
+        font-size: 1.2rem;
+    }
+    
+    .section-image {
+        display: none !important;
+    }
+
+    .landing-container .section-text, .prices-container .section-text {
+        width: 100%;
+    }
+
+    nav {
+        width: 30%;
+    }
+
+    .cards {
+        width: 90%;
+        height: 40%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .landing-container main {
+        flex-direction: column;
+    }
+
+    .landing-container .main-image {
+        width: 100%;
+        height: 50%;
+    }
+
+    .landing-container .main-text {
+        width: 90%;
+    }
 }
